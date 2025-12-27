@@ -1,8 +1,12 @@
-# 🚀 Skill Gadi – Full Stack Learning & Assessment Platform
+<p align="center">
+  <img src="https://github.com/Anjaneyakumar18/Skillgadi/blob/main/Skill%20gadi%20Frontend%20ReactJs/SkillGadi%20Frontend/public/images/file_0000000082f07206bbe83fc3f46cfdcf.png" alt="SkillGadi System Design" width="900"/>
+</p>
+
+# Skill Gadi – Full Stack Learning & Assessment Platform
 
 Skill Gadi is a **full-stack, production-oriented learning and assessment platform** designed to help users **learn, practice, and evaluate technical skills** through quizzes, coding challenges, paid learning content, and AI-powered features.
 
-This project demonstrates **real-world backend engineering**, secure payment workflows, authentication, and microservices-based system design.
+This project demonstrates **real-world backend engineering**, secure payment workflows, authentication, third-party integrations, and **microservices-oriented system design**.
 
 ---
 
@@ -15,9 +19,9 @@ This project demonstrates **real-world backend engineering**, secure payment wor
 - 🧑‍💻 Online Remote Code Execution (Judge0 API)  
 - 📝 Paid Handwritten Notes with Auto Email Delivery  
 - 📊 Quiz System with Difficulty Levels, Attempts & Rankings  
-- 🤖 AI-powered Quiz & Learning Enhancements (OpenAI APIs)  
+- 🤖 AI-powered Quiz & Learning Enhancements  
 - 🧑‍🏫 Admin & User Role-based Access Control  
-- 📡 RESTful APIs with Secure Backend Design  
+- 📡 RESTful APIs with secure backend design  
 
 ---
 
@@ -32,8 +36,8 @@ This project demonstrates **real-world backend engineering**, secure payment wor
 ---
 
 ### ⚙️ Backend
-- **Spring Boot** – Core business services  
-- **Django** – AI & auxiliary services  
+- Spring Boot – Core business services  
+- Django – AI & auxiliary services  
 - Java  
 - Python  
 
@@ -95,34 +99,26 @@ Skill Gadi follows a **microservices-oriented architecture**:
 
 ## 🧩 Microservices Breakdown
 
-- **Auth Service**  
-  - User registration & login  
-  - JWT token generation  
-  - Role-based authorization  
+### 🔐 Auth Service
+- User registration & login  
+- JWT token generation  
+- Role-based authorization  
 
-- **Quiz Service**  
-  - Quiz creation & management  
-  - Attempts, scoring & rankings  
-  - Difficulty-based quizzes  
+### 📝 Quiz Service
+- Quiz creation & management  
+- Attempts, scoring & rankings  
+- Difficulty-based quizzes  
 
-- **Payment Service**  
-  - Razorpay order creation  
-  - Payment verification  
-  - Transaction tracking  
+### 💳 Payment Service
+- Razorpay order creation  
+- Payment verification  
+- Transaction tracking  
 
-- **Notes Service**  
-  - Paid notes purchase  
-  - Secure access control  
-  - Automatic email delivery  
+### 📚 Notes Service
+- Paid notes purchase  
+- Secure access control  
+- Automatic email delivery  
 
-- **Code Execution Service**  
-  - Integration with Judge0  
-  - Secure sandboxed execution  
-
-- **AI Service**  
-  - OpenAI-based quiz & learning features  
-
----
-
-## 📂 Project Structure (High Level)
-
+### 🧑‍💻 Code Execution Service
+- Integration with Judge0  
+- Secure sandboxed execution  
