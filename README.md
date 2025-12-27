@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/Anjaneyakumar18/Skillgadi/blob/main/Skill%20gadi%20Frontend%20ReactJs/SkillGadi%20Frontend/public/images/file_0000000082f07206bbe83fc3f46cfdcf.png" alt="SkillGadi System Design" width="900"/>
+  <img src="https://github.com/Anjaneyakumar18/Skillgadi/blob/main/Skill%20gadi%20Frontend%20ReactJs/SkillGadi%20Frontend/public/images/file_0000000082f07206bbe83fc3f46cfdcf.png" alt="SkillGadi System Design" width="500"/>
 </p>
 
 # Skill Gadi – Full Stack Learning & Assessment Platform
