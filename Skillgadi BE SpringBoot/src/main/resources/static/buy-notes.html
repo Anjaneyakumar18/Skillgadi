@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SkillGadi | Buy Notes</title>
+
+  <!-- Razorpay SDK -->
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .card {
+      background: #ffffff;
+      width: 340px;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+
+    .card h2 {
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    .card p {
+      margin: 6px 0;
+      color: #475569;
+    }
+
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #2563eb;
+      color: #ffffff;
+    }
+
+    button:hover {
+      background: #1e40af;
+    }
+  </style>
+</head>
+<body>
+
+<div class="card">
+  <h2>📘 Buy Notes</h2>
+  <p><strong>Notes:</strong> Kappa</p>
+  <p><strong>Price:</strong> ₹100</p>
+
+  <button onclick="startPayment()">Pay & Get Notes</button>
+</div>
+
+<script>
+/* 🔐 JWT TOKEN (provided by you) */
+const TOKEN =
+"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJha0BnbWFpbC5jb20iLCJyb2xlIjoiVVNFUiIsImlhdCI6MTc2NjU2OTkwOSwiZXhwIjoxNzY2NjU2MzA5fQ.cQrBb5Ad80TVLaZGvEpnJyTMdo0_D7H1DzbfL24y_bo";
+
+async function startPayment() {
+
+  /* 1️⃣ CREATE ORDER (AUTH REQUIRED) */
+  const orderResponse = await fetch(
+    "http://localhost:9000/payments/notes/create-order",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + TOKEN
+      },
+      body: JSON.stringify({
+        amount: 100,
+        email: "anjaneyakumar1804@gmail.com",
+        notes: "kappa",
+        link: "https://github.com/Anjaneyakumar18"
+      })
+    }
+  );
+
+  if (!orderResponse.ok) {
+    alert("Unauthorized or Order creation failed");
+    return;
+  }
+
+  const order = await orderResponse.json();
+
+  /* 2️⃣ RAZORPAY CHECKOUT */
+  const options = {
+    key: "rzp_test_RsCwC4mm7sFgPD", // 🔴 Replace with your Razorpay KEY_ID
+    amount: order.amount,
+    currency: "INR",
+    name: "SkillGadi",
+    description: "Notes Purchase",
+    order_id: order.id,
+
+    handler: async function (response) {
+
+      /* 3️⃣ VERIFY PAYMENT (AUTH REQUIRED) */
+      const verifyResponse = await fetch(
+        "http://localhost:9000/payments/notes/verify-payment",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": "Bearer " + TOKEN
+          },
+          body: JSON.stringify({
+            razorpay_payment_id: response.razorpay_payment_id,
+            razorpay_order_id: response.razorpay_order_id,
+            razorpay_signature: response.razorpay_signature,
+            email: "anjaneyakumar1804@gmail.com",
+            notes: "kappa",
+            link: "https://github.com/Anjaneyakumar18"
+          })
+        }
+      );
+
+      const result = await verifyResponse.text();
+      alert(result);
+    },
+
+    theme: {
+      color: "#2563eb"
+    }
+  };
+
+  const rzp = new Razorpay(options);
+  rzp.open();
+}
+</script>
+
+</body>
+</html>

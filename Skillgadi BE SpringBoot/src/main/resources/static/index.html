@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Razorpay Test</title>
+</head>
+<body>
+
+<h2>Pay ₹1000</h2>
+<button id="pay">Pay Now</button>
+
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+
+<script>
+document.getElementById("pay").onclick = () => {
+
+  fetch("/api/payments/create-order", { method: "POST" })
+    .then(r => r.json())
+    .then(order => {
+
+      console.log("ORDER:", order);
+
+      if (!order.id) {
+        alert("Order ID missing");
+        return;
+      }
+
+      const rzp = new Razorpay({
+        key: "rzp_test_RsCwC4mm7sFgPD",
+        order_id: order.id,
+        amount: order.amount,
+        currency: order.currency,
+
+        handler: function (res) {
+          console.log("SUCCESS:", res);
+
+          fetch("/api/payments/verify", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              razorpay_payment_id: res.razorpay_payment_id,
+              razorpay_order_id: res.razorpay_order_id,
+              razorpay_signature: res.razorpay_signature
+            })
+          })
+          .then(r => r.text())
+          .then(msg => alert(msg));
+        }
+      });
+
+      rzp.open();
+    })
+    .catch(e => {
+      console.error(e);
+      alert("FAILED");
+    });
+};
+</script>
+
+</body>
+</html>
