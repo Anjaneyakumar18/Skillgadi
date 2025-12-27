@@ -1,124 +1,128 @@
 # 🚀 Skill Gadi – Full Stack Learning & Assessment Platform
 
-Skill Gadi is a **full-stack, production-grade platform** that enables users to learn, practice, and assess technical skills through **paid quizzes, remote code execution, automated content delivery, and secure authentication**.
+Skill Gadi is a **full-stack, production-oriented learning and assessment platform** designed to help users **learn, practice, and evaluate technical skills** through quizzes, coding challenges, paid learning content, and AI-powered features.
+
+This project demonstrates **real-world backend engineering**, secure payment workflows, authentication, and microservices-based system design.
 
 ---
 
 ## 🧠 Key Features
 
 - 🔐 JWT-based Authentication & Authorization  
+- 🧩 Microservices-oriented Backend Architecture  
 - 💳 Secure Razorpay Payment Gateway Integration  
 - 📧 Real-time Automated Email Notifications (SMTP)  
 - 🧑‍💻 Online Remote Code Execution (Judge0 API)  
-- 📝 Paid Handwritten Notes (Auto Email Delivery)  
-- 📊 Quiz System with Difficulty Levels & Rankings  
-- 🧩 AI Model Integrations (OpenAI-based features)  
-- 🧑‍🏫 Admin & User Role-based Access  
-- 📡 REST APIs with Secure Backend Architecture  
+- 📝 Paid Handwritten Notes with Auto Email Delivery  
+- 📊 Quiz System with Difficulty Levels, Attempts & Rankings  
+- 🤖 AI-powered Quiz & Learning Enhancements (OpenAI APIs)  
+- 🧑‍🏫 Admin & User Role-based Access Control  
+- 📡 RESTful APIs with Secure Backend Design  
 
 ---
 
 ## 🛠️ Technologies Used
 
 ### 🎨 Frontend
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" height="40"/>
-</p>
+- React.js  
+- JavaScript  
+- HTML5, CSS3  
+- Vite  
 
 ---
 
 ### ⚙️ Backend
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="40"/>
-</p>
+- **Spring Boot** – Core business services  
+- **Django** – AI & auxiliary services  
+- Java  
+- Python  
 
 ---
 
 ### 🗄️ Database
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" height="40"/>
-</p>
+- MySQL  
 
 ---
 
 ### 🔐 Security & Authentication
-<p align="left">
-  <img src="https://jwt.io/img/pic_logo.svg" height="40"/>
-</p>
+- JWT (Stateless Authentication)  
+- Role-based Access Control (Admin / User)  
 
 ---
 
 ### 💳 Payments
-<p align="left">
-  <img src="https://razorpay.com/assets/razorpay-glyph.svg" height="40"/>
-</p>
+- Razorpay (Test & Live Mode Supported)  
 
 ---
 
 ### 🧑‍💻 Remote Code Execution
-<p align="left">
-  <img src="https://judge0.com/favicon.ico" height="40"/>
-</p>
+- Judge0 API (Sandboxed execution environment)  
 
 ---
 
 ### 🤖 AI & Integrations
-<p align="left">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/OpenAI_Logo.svg" height="40"/>
-</p>
+- OpenAI APIs (Quiz generation & learning enhancements)  
 
 ---
 
 ### 📬 Email & API Tools
-<p align="left">
-  <img src="https://cdn-icons-png.flaticon.com/512/5968/5968534.png" height="40"/>
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" height="40"/>
-</p>
+- SMTP (Automated transactional emails)  
+- Postman (API testing)  
 
 ---
 
 ### ☁️ Deployment & DevOps
-<p align="left">
-  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg" height="40"/>
-</p>
+- AWS (EC2-based deployment)  
+- Environment-based configuration  
 
 ---
 
 ## 🏗️ Architecture Overview
 
-- React handles UI & user interactions  
-- Spring Boot & Django power secure backend services  
-- MySQL manages relational data  
-- Razorpay handles real-time payments  
-- SMTP automates transactional emails  
-- Judge0 executes user code securely in sandboxed environments  
-- JWT secures APIs with stateless authentication  
-- AI services enhance quizzes & learning experience  
+Skill Gadi follows a **microservices-oriented architecture**:
+
+- React handles the user interface and client-side logic  
+- Spring Boot manages core backend services  
+- Django handles AI-related and auxiliary services  
+- Services communicate via REST APIs  
+- JWT secures both client-to-server and service-to-service communication  
+- MySQL manages structured relational data  
+- Razorpay handles secure payment processing  
+- SMTP automates transactional email delivery  
+- Judge0 executes user-submitted code in isolated containers  
 
 ---
 
-## 👨‍💻 Developed By
+## 🧩 Microservices Breakdown
 
-**Ak**  
-B.Tech CSE | Full Stack Developer  
-Strong in DSA, System Design & Real-World Backend Systems  
+- **Auth Service**  
+  - User registration & login  
+  - JWT token generation  
+  - Role-based authorization  
+
+- **Quiz Service**  
+  - Quiz creation & management  
+  - Attempts, scoring & rankings  
+  - Difficulty-based quizzes  
+
+- **Payment Service**  
+  - Razorpay order creation  
+  - Payment verification  
+  - Transaction tracking  
+
+- **Notes Service**  
+  - Paid notes purchase  
+  - Secure access control  
+  - Automatic email delivery  
+
+- **Code Execution Service**  
+  - Integration with Judge0  
+  - Secure sandboxed execution  
+
+- **AI Service**  
+  - OpenAI-based quiz & learning features  
 
 ---
 
-## ⭐ Why This Project Stands Out
+## 📂 Project Structure (High Level)
 
-✔ Real-world payment & security flow  
-✔ Industry-level architecture  
-✔ Not a CRUD app  
-✔ Recruiter-attractive tech stack  
-✔ Demonstrates backend depth + system thinking  
-
----
-
-⭐ **If you like this project, give it a star!**
