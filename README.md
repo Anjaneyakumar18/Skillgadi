@@ -55,7 +55,7 @@ This project demonstrates **real-world backend engineering**, secure payment wor
 ---
 
 ### 💳 Payments
-- Razorpay (Test & Live Mode Supported)  
+- Razorpay payments Gateway  
 
 ---
 
@@ -65,7 +65,8 @@ This project demonstrates **real-world backend engineering**, secure payment wor
 ---
 
 ### 🤖 AI & Integrations
-- OpenAI APIs (Quiz generation & learning enhancements)  
+- OpenAI APIs
+- custom api called Pickle Ai
 
 ---
 
@@ -75,11 +76,7 @@ This project demonstrates **real-world backend engineering**, secure payment wor
 
 ---
 
-### ☁️ Deployment & DevOps
-- AWS (EC2-based deployment)  
-- Environment-based configuration  
 
----
 
 ## 🏗️ Architecture Overview
 
